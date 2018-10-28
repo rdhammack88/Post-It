@@ -1,0 +1,15 @@
+body {
+    overflow-x: hidden;
+}
+
+.activeLink {
+    background: rgba(220, 0, 0, 0.5) !important;
+
+    @include minmedia(768px) {
+        border-radius: 0 0 8px 8px;
+    }
+
+    > a {
+        color: #fff !important;
+    }
+}

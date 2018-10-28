@@ -1,0 +1,350 @@
+/* Blog Article Content Styles */
+#blogSection {
+    // height: 100%;
+
+    .body-container .text-right .add-btn {
+        /* padding: 15px; */
+        /* background: rgba(220, 0, 0, 0.5); */
+        /* font-size: 1.3em; */
+    }
+    div.blog {
+        /* margin-bottom: 100px; */
+        box-shadow: 10px 10px 16px rgba(20, 23, 28, 0.25);
+        border-radius: 10px 10px 10px 10px;
+    }
+    div.blog:not(:first-of-type) {
+        margin-top: 100px;
+    }
+    article {
+        /* padding: 5px 30px 30px; */
+        background-color: #eee;
+        /* rgba(170, 227, 114, 1); 	/*rgba(240, 173, 78, .3); */ /* #f0ad4e; */ /* rgba(255, 228, 196, .8); */
+        border-radius: 10px 10px 10px 10px; /* margin-bottom: 100px; */
+        border: 1px solid #000;
+        min-height: 400px;
+        position: relative;
+    }
+    div.blogComments {
+        /* margin-top: 0; */
+        min-height: 100px;
+        height: 100%;
+        padding-top: 10px;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+        border-left: 2px solid #000;
+        border-radius: 0 0 10px 10px;
+    }
+    .blog_title {
+        background: rgba(220, 220, 220, 0.7); /* rgba(111, 208, 31, 1); */
+        /* background-color: rgba(220, 0, 0, .1); */
+        padding: 15px 2% 5px;
+        border-radius: 10px 10px 0 0;
+    }
+    .blog_title > div.col-xs-8 {
+        padding-right: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+        height: 100%;
+        vertical-align: baseline; /* text-bottom; */
+    }
+    .avatar {
+        display: inline-block;
+    }
+    img {
+        width: 50px;
+        height: 50px; /* float: left; */
+    }
+    .user_name::before {
+        content: '@';
+        font-size: 0.7em;
+        /* content: "\00b7"; */
+    }
+    .user_name {
+    }
+    .blog_title a.name {
+        width: 74%;
+        height: 50px;
+        vertical-align: sub;
+        display: inline-block; /* margin-right: 2%; */
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .blog_title h4 {
+        /* height: 50px; */
+        margin-left: 20px;
+    }
+
+    .blog_title h4 {
+        /* , h3 */
+        /* margin-bottom: 2px; */
+        /* width: 60%; */
+        font-size: 1em;
+        font-family: 'Shadows Into Light', cursive;
+        display: inline-block;
+        padding-left: 2%;
+        vertical-align: -webkit-baseline-middle;
+        text-transform: uppercase;
+    }
+    /* .blog_title h2 {
+	font-family: 'Shadows Into Light', cursive;
+	display: inline-block;
+	padding-left: 5%;margin-bottom: 2px;
+	width: 80%;
+} */
+    /* Blog/Comment Settings Button Styles */
+    .date_and_settings,
+    .blogComments .settingsList {
+        padding: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    p.settings {
+        text-align: right;
+    }
+    p.settings button {
+        background-color: transparent;
+        outline: none;
+        padding: 10px 20px;
+    }
+    p.settings button .down-arrow {
+        font-size: 0.4em;
+    }
+    .date_and_settings ul,
+    .blogComments ul.settingsList {
+        background: rgb(220, 220, 220);
+        padding: 0;
+        border-radius: 0 0 5px 5px;
+        position: absolute;
+        z-index: 2;
+        border: 1px solid #444;
+        overflow: hidden;
+    }
+    .date_and_settings ul li button span.glyphicon-pencil,
+    .blogComments ul.settingsList li button span.glyphicon-pencil {
+        left: -17px;
+    }
+
+    .date_and_settings ul li button,
+    .blogComments ul.settingsList li button {
+        /* background: transparent; */ /* #f40; */
+        width: 100%;
+        text-align: right;
+    }
+    .date_and_settings ul li:hover button,
+    .blogComments ul.settingsList li:hover button {
+        background: rgba(220, 0, 0, 0.5); /* #f40; */
+        color: #fff;
+        border-radius: 0;
+        -moz-outline: none;
+        outline: none;
+    }
+    a.date {
+        display: inline-block;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+        text-align: right;
+        vertical-align: bottom;
+        /* -webkit-baseline-middle; */
+    }
+    div.date {
+        height: 100%;
+    }
+    div.date a.date {
+        height: 58px;
+    }
+    div.date a.date p.date_posted {
+        /* height: 100%; */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding-bottom: 5px;
+    }
+    .date_posted {
+        width: 100%;
+        text-align: right;
+        margin: 0;
+        padding-right: 15px; /* margin-top: 0; */
+        /* padding-left: 15%; */
+        /* color: #000; */
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        vertical-align: -webkit-baseline-middle;
+        /* width: 80%;
+	float: left; */
+    }
+    a.date:hover > p {
+        cursor: pointer;
+
+        color: red;
+    }
+
+    .blogPost {
+        position: relative;
+        top: 0;
+        height: 80%;
+        min-height: 280px; /* margin-bottom: 20px; */
+        padding: 15px;
+        box-sizing: content-box;
+    }
+    .blogPost a.title {
+        display: inline-block;
+        height: 50px;
+        width: 100%;
+        padding: 0 10px 5px;
+    }
+    p.post {
+        clear: both;
+    }
+    .post a.showMore,
+    .post a.showLess {
+        color: #00f;
+    }
+
+    /* #blogSection article p:not(.date_posted) { */
+    article p.post {
+        padding: 5px 35px 5px;
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+    article > p:first-of-type {
+        /* padding-top: 40px; */
+    }
+    article div.likes-and-comments p {
+        /* height: 2em;
+	margin-top: 45px; */
+        /* padding: 10px; */
+    }
+    article .likes-and-comments {
+        position: absolute;
+        bottom: 0;
+        left: 0; /* top: 95%; */
+        width: 100%;
+        /* height: 100%; */
+        /* height: 2em; */
+        margin: 0;
+        /* margin-top: 45px; */ /* Test here and height and padding above */
+    }
+    article div.likes-and-comments span.comment-btn {
+        /* cursor: pointer; */
+    }
+    /* 404 & 414 endpoints and after all tests now its 354 endpoint */
+    .blog-footer-row {
+        height: 50px;
+        font-size: 0.8em; /* margin-top: 30px; */
+    }
+    .blog_footer {
+        width: 100%;
+        height: 50px;
+        background: rgba(
+            225,
+            225,
+            225,
+            0.7
+        ); /* rgba(111, 208, 31, 1); */ /* background-color: rgba(220, 0, 0, .1); */
+        padding: 5px;
+        border-radius: 0 0 10px 10px;
+        position: absolute;
+        /* top: 100%; */
+        bottom: 0;
+    }
+    .blog_footer button {
+        background-color: transparent;
+        -moz-outline: none;
+        outline: none;
+        font-size: 1em;
+    }
+    .blog_footer span.liked {
+        color: #f34;
+    }
+    .blog_footer span.disliked {
+        color: #f34;
+    }
+    .blog_footer span.favorited {
+        /* color: rgba(0, 0, 230, 0.7); */ /* color: rgba(222, 0, 100, 0.7); */
+        color: rgba(222, 0, 44, 0.7);
+    }
+    /* break at 378px endpoint */
+    .blog_footer p.footerSettings {
+        padding: 0;
+    }
+    /* Blog Comments Styles */
+    .blogComments {
+        padding-bottom: 0;
+        form#commentForm div.form-group {
+            padding: 5px;
+            padding-bottom: 15px;
+            margin: 0;
+        }
+        ul.list-group {
+            margin: 0;
+        }
+        ul.list-group li:nth-of-type(odd) {
+            // background-color: rgba(80, 80, 80, 0.12);
+            background-color: rgba(120, 118, 118, 0.12);
+        }
+        ul.list-group li p {
+            margin-bottom: 0;
+        }
+        ul.list-group li p img.comment_user_avatar {
+            width: 30px;
+            height: 30px;
+            vertical-align: text-bottom;
+            border-radius: 50%;
+        }
+        ul.list-group li p span.user-name {
+            margin-left: 15px;
+            vertical-align: bottom;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: bolder;
+            /* text-decoration: underline; */
+        }
+        ul.list-group li p.settings {
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        ul.list-group li p.comment,
+        ul.list-group li p.comment-date {
+            /* margin: 0 0 0 9%; */
+            padding: 0 9%;
+        }
+        ul.list-group li a.load-more-comments {
+            color: blue;
+        }
+        ul.list-group li hr {
+            border-top: 2px solid rgba(200, 200, 200, 0.9);
+            /* border-bottom-style: double; */
+            width: 80%;
+            margin: 0 0 5px 15px;
+        }
+        ul.list-group li p.comment span.comment-text {
+            /* display: block; */
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.5em; /* text-transform: capitalize; */
+        }
+        ul.list-group li p.comment-date small.date-posted::before {
+            /* content: '\00b7'; */
+            content: '\00b7';
+            /* font-size: 1.4em; */
+            vertical-align: middle;
+        }
+        ul.list-group li p.comment-date small.date-posted {
+            display: block;
+            letter-spacing: 1.5px;
+            font-size: 0.7em;
+            color: #000;
+            font-weight: 600;
+        }
+    }
+    /* .newCommentInput, * {
+	outline: none;
+} */
+}
