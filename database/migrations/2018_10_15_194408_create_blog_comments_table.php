@@ -23,7 +23,7 @@ class CreateBlogCommentsTable extends Migration
             $table->foreign('blog_id')->references('id')->on('blog_posts')->onDelete('cascade');
             $table->mediumText('body');
             $table->integer('likes')->default(0);
-            $table->timestamps()->useCurrent();
+            $table->timestamps();
         });
     }
 
