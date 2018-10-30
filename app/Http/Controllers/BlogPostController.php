@@ -20,7 +20,7 @@ class BlogPostController extends Controller
         $blogPosts = BlogPost::orderBy('created_at', 'desc')->where('public', true)->paginate(10);
         // $blogPosts->user = App\User::find('App\BlogPost');
         // $blogPosts['user'] = 'Dustin';
-        
+
         foreach ($blogPosts as $blogPost) {
             // $blogPost['user'] = 'Dustin';
             // return $blogPost;
@@ -33,8 +33,9 @@ class BlogPostController extends Controller
             $blogPost['blog_comments'] = BlogComment::all()->where('blog_id', $blogPost['id']);
         }
 
+        return view('blogs.index')->with('blogPosts', $blogPosts);
 
-        return response()->json($blogPosts);
+        // return response()->json($blogPosts);
 
         // $blogPosts = BlogPost::all()->where('public', true);
         // $user = App\User::find($blogPosts);
