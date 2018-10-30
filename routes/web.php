@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-})->name('home');
-//  ['as' => 'home'],
+// Route::get('/', function () {
+//     return view('layouts.app');
+// })->name('home');
+// //  ['as' => 'home'],
+
+
+Route::get('/', 'BlogPostController@index')->name('home');
 
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::resource('/blogs', 'BlogPostController');
+Route::resource('/blogs', 'BlogPostController');
