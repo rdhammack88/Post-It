@@ -95,7 +95,7 @@
                             <label for="bio" class="col-md-10 offset-md-1 col-form-label control-label">{{ __('Biography') }}</label>
 
                             <div class="col-md-10 offset-md-1">
-                                <textarea id="bio" type="password" class="form-control" name="user_bio" placeholder="Biography" rows="5"></textarea>
+                                <textarea id="bio" type="password" class="form-control" name="bio" placeholder="Biography" rows="5"></textarea>
                             </div>
                         </div>
 
