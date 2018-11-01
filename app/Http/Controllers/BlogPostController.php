@@ -113,7 +113,9 @@ class BlogPostController extends Controller
     public function show($id)
     {
         $blogPost = BlogPost::find($id);
-        return response()->json($blogPost);
+        $blogPost['user'] = User::find($blogPost['user_id']);
+        $blogPost['blog_comments'] = BlogComment::all()->where('blog_id', $blogPost['id']);
+        return view('blogs.show')->with('blogPost', $blogPost);
     }
 
     /**
