@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    $('.fade-text')
+        .slideUp(10000)
+        .fadeTo(6000, 0.0);
+    $('[data-toggle="tooltip"]').tooltip();
+
     $('#mainNav .navbar-nav a').on('click', function() {
         $('#mainNav .navbar-nav')
             .find('li.activeLink')
