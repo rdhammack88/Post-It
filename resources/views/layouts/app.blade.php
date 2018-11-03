@@ -27,7 +27,7 @@
 
         <main class="container py-0">
             @if (Auth::user())
-            <div class="row mb-5 text-right">
+            <div class="row my-5 text-right">
                 <div class="col-12">
                     <span class="sr-only" aria-hidden="true">Add new blog</span>
                     <a href="/blogs/create" class="btn btn-outline-secondary add-btn">
@@ -40,10 +40,7 @@
         </main>
     </div>
 
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'article-ckeditor' );
-    </script>
+
 </body>
 
 </html>
