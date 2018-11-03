@@ -6,6 +6,8 @@ use App\User;
 use App\BlogPost;
 use App\BlogComment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class BlogPostController extends Controller
 {
@@ -50,6 +52,9 @@ class BlogPostController extends Controller
      */
     public function create()
     {
+        if (!Auth::user()) {
+            return redirect()->route('home');
+        }
         return view('blogs.create');
     }
 
@@ -61,6 +66,9 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->input('cancel')) {
+            return redirect('home');
+        }
         /** Validate User Input */
         $validator = Validator::make($request->all(), [
             'title' => 'required',
@@ -93,14 +101,15 @@ class BlogPostController extends Controller
 
             /** Insert BlogPost into Db */
             $blogPost = new BlogPost;
+            $blogPost->user_id = auth()->user()->id();
             $blogPost->title = $request->input('title');
             $blogPost->category = $request->input('category');
             $blogPost->body = $request->input('body');
             $blogPost->cover_image = $filenameToStore;
-            $blogPost->public = $request->input('public');
+            $blogPost->public = $request->input('public') || $request->input('private');
             $blogPost->save();
 
-            return response()->json($blogPost);
+            return redirect('dashboard')->with('status', 'New blog successfully created!');
         }
     }
 
