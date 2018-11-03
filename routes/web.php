@@ -24,3 +24,7 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/blogs', 'BlogPostController');
+
+Route::get('/dashboard', function () {
+    return view('blogs.dashboard');
+})->name('dashboard');
