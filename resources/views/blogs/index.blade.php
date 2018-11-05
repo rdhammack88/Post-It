@@ -1,19 +1,50 @@
 @extends('layouts.app')
-@section('content')
+@section('content') {{--
 <div class="row mb-4 text-right">
     <div class="col-12">
         <span class="text-danger fade-text">Most Recent Blog Posts...</span>
     </div>
-</div>
+</div> --}}
+
 <section id="blogSection" class="row">
+    <!-- If the count of blogPosts !== 0 -->
+    @if (count($blogPosts))
     <div class="col-md-3 d-none d-md-flex">
     @include('inc.sidebar')
     </div>
     <div class="col-12 col-md-8 offset-md-1">
-        @if (count($blogPosts)) @foreach ($blogPosts as $blogPost)
-        <?php //var_dump($blogPost->comments) ?>
-    @include('components.blog.blog') @endforeach @endif
+
+        <!-- Confirm User is Logged In and Display "Add new blog" Button -->
+        @if (Auth::user() && Route::is('user_blogs'))
+        <div class="row my-5">
+            <div class="col-2 ml-auto mr-4 mr-md-0">
+                <span class="sr-only" aria-hidden="true">Add new blog</span>
+                <a href="/blogs/create" class="btn btn-outline-secondary add-btn">
+                    <span class="fa fa-plus"></span> New
+                </a>
+            </div>
+        </div>
+        @endif
+        <!-- End Display "Add new blog" Button -->
+        <!-- For each blog post -->
+        @foreach ($blogPosts as $blogPost)
+        <!-- For each blog post, include the Blog component to display -->
+    @include('components.blog.blog')
+        <!-- End of for each blog post -->
+        @endforeach
+        <!-- If user does not have any recent posts -->
+        @else
+        <div class="col-12 col-md-10 offset-md-1">
+            <p class="lead">
+                You do not have any recent posts.
+                <span class="sr-only" aria-hidden="true">Add new blog</span>
+                <a href="/blogs/create" class="add-btn get-started-btn">Get started</a> now putting your thoughts out there
+                for others to read.
+            </p>
+        </div>
     </div>
+    <!-- End of count of blogPosts !== 0 -->
+    @endif
 </section>
 @endsection
  {{-- <i class="far fa-thumbs-down" aria-hidden="true"></i>
