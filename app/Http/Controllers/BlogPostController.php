@@ -67,7 +67,7 @@ class BlogPostController extends Controller
     public function store(Request $request)
     {
         if ($request->input('cancel')) {
-            return redirect('home');
+            return redirect('dashboard');
         }
         /** Validate User Input */
         $validator = Validator::make($request->all(), [
