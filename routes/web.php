@@ -24,7 +24,11 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/blogs', 'BlogPostController');
+Route::resource('/User', 'UserController');
 
-Route::get('/dashboard', function () {
-    return view('blogs.dashboard');
-})->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('blogs.dashboard');
+// })->name('dashboard');
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/blogs/user/{id}', 'UserBlogController@index')->name('user_blogs');
