@@ -25,7 +25,7 @@
             </h3>
             <div class="col-12 post">{!! $blogPost->body !!}</div>
             <div class="col-12 text-right likes-and-comments">
-                <p class="col-12 m-0">
+                <p class="col-12 m-0 p-0">
                     <span><span class="total-likes">{{$blogPost->likes}}</span> Likes &nbsp;&nbsp;&nbsp;</span>
                     <span><span class="total-dislikes">{{$blogPost->dislikes}}</span> Dislikes &nbsp;&nbsp;&nbsp;</span>
                     <span class="comment-btn">
@@ -34,9 +34,9 @@
                 </p>
             </div>
         </div>
-        <div class="col-12 blog-footer-row">
-            <form class="row blog_footer_form" action="/blogs/update/{{$blogPost->id}}" method="POST">
-                <p class="col-9">
+        <div class="col-12 p-0 blog-footer-row">
+            <form class="row m-0 blog_footer_form" action="/blogs/update/{{$blogPost->id}}" method="POST">
+                <p class="col-9 p-0">
                     <span class="sr-only">Like this blog</span>
                     <button type="submit" class="btn like-btn" name="like" title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Like this post">
                         <span class="fa fa-heart-o" aria-hidden="true"></span>
