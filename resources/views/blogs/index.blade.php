@@ -32,11 +32,11 @@
     @include('components.blog.blog')
         <!-- End of for each blog post -->
         @endforeach
-        <!-- If user does not have any recent posts -->
+        <!-- If there are not any recent posts -->
         @else
         <div class="col-12 col-md-10 offset-md-1">
             <p class="lead">
-                You do not have any recent posts.
+                There are no recent posts.
                 <span class="sr-only" aria-hidden="true">Add new blog</span>
                 <a href="/blogs/create" class="add-btn get-started-btn">Get started</a> now putting your thoughts out there
                 for others to read.
