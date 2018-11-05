@@ -25,18 +25,22 @@
     <div id="app">
     @include('inc.navbar')
 
-        <main class="container py-0">
-            @if (Auth::user())
-            <div class="row my-5 text-right">
-                <div class="col-12">
+        <main class="container mb-5 py-0">
+            {{--
+            <!-- Confirm User is Logged In and Display "Add new blog" Button -->
+            @if (Auth::user() && (Route::is('dashboard*') || Route::is('user_blogs')))
+            <div class="row my-5">
+                <div class="col-2 ml-auto mr-4 mr-md-0">
                     <span class="sr-only" aria-hidden="true">Add new blog</span>
                     <a href="/blogs/create" class="btn btn-outline-secondary add-btn">
                         <span class="fa fa-plus"></span> New
                     </a>
                 </div>
             </div>
-
-            @endif @yield('content')
+            @endif
+            <!-- End Display "Add new blog" Button -->--}}
+            <!-- Display All App Extended Content -->
+            @yield('content')
         </main>
     </div>
 
@@ -44,3 +48,4 @@
 </body>
 
 </html>
+{{-- Request::is('/dashboard') --}}
