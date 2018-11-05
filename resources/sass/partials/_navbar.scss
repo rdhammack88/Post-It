@@ -2,7 +2,7 @@ nav#mainNav {
     font-weight: 700;
     padding-top: 0;
 
-    li {
+    li:not(.dropdown > *) {
         @include minmedia(768px) {
             margin-left: 3px;
         }
@@ -41,7 +41,7 @@ nav#mainNav {
         // transition: all 0.5s ease;
 
         &:not(.navbar-brand) {
-            padding: 0.8rem;
+            padding: 1.1rem 0.8rem 1rem;
 
             i {
                 font-size: 1.3rem;
@@ -90,8 +90,8 @@ nav#mainNav {
     }
 }
 .search-bar {
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    // margin-top: 4rem;
+    // margin-bottom: 3rem;
     border-bottom: 1px solid #e7e7e7;
     // top: -10px;
 
