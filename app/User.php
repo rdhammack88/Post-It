@@ -28,32 +28,37 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
+    /** User hasMany Blogs Relationship */
     public function blogs()
     {
         return $this->hasMany('App\BlogPost');
     }
 
+    /** User hasMany Blog Likes Relationship */
     public function blog_likes()
     {
         return $this->hasMany('App\BlogPostLike');
     }
 
+    /** User hasMany Blog Dislikes Relationship */
     public function dislikes()
     {
         return $this->hasMany('App\BlogPostDislike');
     }
 
+    /** User hasMany Blog Favorites Relationship */
     public function favorites()
     {
         return $this->hasMany('App\UserFavoriteBlog');
     }
 
+    /** User hasMany Blog Comments Relationship */
     public function comments()
     {
         return $this->hasMany('App\BlogComment');
     }
 
+    /** User hasMany Blog Comments Likes Relationship */
     public function comment_likes()
     {
         return $this->hasMany('App\BlogCommentLike');
