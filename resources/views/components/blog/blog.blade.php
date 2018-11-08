@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-8">
                     <a href="/blogs/user/{{$blogPost->user->id}}" class="avatar">
-                            <img src='../storage/user_profile_images/{{$blogPost->user->avatar}}' alt="User dhammacks profile photo" />
+                            <img src='/storage/user_profile_images/{{$blogPost->user->avatar}}' alt="User dhammacks profile photo" />
                         </a>
                     <a href="/blogs/user/{{$blogPost->user->id}}" class="name">
                         <h5 class="user_name">{{$blogPost->user->username}}</h5>
