@@ -101,7 +101,7 @@ class BlogPostController extends Controller
 
             /** Insert BlogPost into Db */
             $blogPost = new BlogPost;
-            $blogPost->user_id = auth()->user()->id();
+            $blogPost->user_id = auth()->user()->id;
             $blogPost->title = $request->input('title');
             $blogPost->category = $request->input('category');
             $blogPost->body = $request->input('body');
