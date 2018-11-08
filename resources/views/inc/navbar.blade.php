@@ -68,19 +68,33 @@
                     </li>
 
 
-                    <li class="nav-item dropdown d-none d-md-block">
+                    <li class="nav-item dropdown d-none d-md-block {{Request::is('dashboard') || Request::is('user/*') ? 'activeLink' : ''}}">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span> Account
+                                {{-- {{ Auth::user()->first_name }}  --}}
+                                <span class="caret"></span> Account
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <li class="nav-item {{Request::is('dashboard') ? 'activeLink' : ''}}">
+                            <li class="nav-item">
+                                <a href="user_profile.php">
+                                <img class="image-border header-profile-image" src="/storage/user_profile_images/{{auth()->user()->avatar}}" alt="User {{auth()->user()->username}} profile image">
+                                    <p class="nav-user-info">
+                                        <span class="d-block nav-full-name">{{auth()->user()->first_name }} {{auth()->user()->last_name }}</span>
+                                        <span class="d-block nav-user-name">
+                                            <strong>
+                                                <em>{{auth()->user()->username}}</em>
+                                            </strong>
+                                        </span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link dropdown-item blogsLink" href="{{route('dashboard')}}">
                                     <span class="fa fa-book" aria-hidden="true"></span> Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link dropdown-item" href="edit_user_account.php">Edit Profile</a>
+                                <a class="nav-link dropdown-item" href="/user/{{auth()->id()}}/edit">Edit Profile</a>
                             </li>
                             {{-- dropdown-item --}}
                             <li class="nav-item">
