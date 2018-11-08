@@ -27,6 +27,6 @@ class DashboardController extends Controller
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
 
-        return view('blogs.dashboard')->with('blogPosts', $user->blogPosts);
+        return view('blogs.dashboard')->with('blogPosts', $user->blogs);
     }
 }
